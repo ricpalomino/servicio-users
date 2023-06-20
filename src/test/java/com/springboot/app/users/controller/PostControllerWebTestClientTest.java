@@ -24,7 +24,7 @@ class PostControllerWebTestClientTest {
   @Test
   void testCreatePostByUserId() {
 	User user = Data.createUser().orElseThrow();
-	client.post().uri("http://localhost:8080/users")
+	client.post().uri("http://localhost:8001/users")
     .contentType(MediaType.APPLICATION_JSON)
     .bodyValue(user)
     .exchange()
@@ -35,7 +35,7 @@ class PostControllerWebTestClientTest {
 	  
 	  
     Post post = Data.createPost().orElseThrow();
-    client.post().uri("http://localhost:8080/users/1/post")
+    client.post().uri("http://localhost:8001/users/1/post")
       .contentType(MediaType.APPLICATION_JSON)
       .bodyValue(post)
       .exchange()
