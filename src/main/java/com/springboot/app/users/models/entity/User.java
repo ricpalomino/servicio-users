@@ -36,14 +36,25 @@ public class User implements Serializable {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	@CreationTimestamp
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createAt;
 
 	@Column(name = "modified_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date modifiedAt;
+
+	public User() {
+	}
+
+	public User(Long id, String name, String lastName, String password, String cellPhone) {
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.password = password;
+		this.cellPhone = cellPhone;
+	}
 
 	public Long getId() {
 		return id;

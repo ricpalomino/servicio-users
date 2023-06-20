@@ -67,7 +67,7 @@ public class PostController {
 	}
 
 	@DeleteMapping("/post/{id}")
-	public ResponseEntity<HttpStatus> deleteComment(@PathVariable("id") long id) {
+	public ResponseEntity<HttpStatus> deletePost(@PathVariable("id") long id) {
 		postDao.deleteById(id);
 
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);

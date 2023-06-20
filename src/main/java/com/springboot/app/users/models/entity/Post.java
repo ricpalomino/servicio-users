@@ -34,7 +34,7 @@ public class Post implements Serializable {
 	private String text;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "tutorial_id", nullable = false)
+	@JoinColumn(name = "user_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private User user;
@@ -42,14 +42,24 @@ public class Post implements Serializable {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	@CreationTimestamp
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createAt;
 
 	@Column(name = "modified_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date modifiedAt;
+
+	public Post() {
+
+	}
+
+	public Post(Long id, String text, User user) {
+		this.id = id;
+		this.text = text;
+		this.user = user;
+	}
 
 	public Long getId() {
 		return id;
