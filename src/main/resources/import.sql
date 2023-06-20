@@ -1,0 +1,1 @@
+INSERT INTO `users` (name, last_name, password, cell_phone, create_at, modified_at) VALUES ('Richard','Palomino','$2a$10$qGyDfZLBB.SgLv7GCP3uZe3oM38fVtr58T1iZ1LNOvO61loNUAAaK','997589427', '2023-06-19', '2023-06-19');
